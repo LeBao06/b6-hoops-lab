@@ -1,0 +1,561 @@
+:root {
+  --ink: #14110f;
+  --paper: #ece6da;
+  --cream: #f3eee3;
+  --accent: #ff5a1f;
+  --gold: #f2b632;
+  --bg: var(--ink);
+  --text: var(--cream);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+nav h1 {
+  margin-right: auto;
+  color: var(--accent);
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.hero {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+#goals {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#goals h2 {
+  margin-bottom: 2rem;
+}
+
+.goal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.goal-card {
+  background: #181b22;
+  border: 1px solid #262a33;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.goal-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.goal-card h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  color: #8a8f9a;
+}
+
+#library {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.filters select {
+  padding: 0.6rem 1rem;
+  background: #181b22;
+  color: var(--text);
+  border: 1px solid #262a33;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.exercise-card {
+  background: #181b22;
+  border: 1px solid #262a33;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.exercise-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  margin: 0 0.3rem 0.8rem 0;
+  border-radius: 999px;
+  background: #262a33;
+  color: var(--accent);
+  text-transform: capitalize;
+}
+
+.sets {
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+details {
+  margin: 0.8rem 0;
+}
+
+summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+details p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #cfd3dc;
+}
+
+.done {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.8rem;
+  cursor: pointer;
+}
+
+.progress {
+  color: #8a8f9a;
+  margin-top: 0.5rem;
+}
+
+/* Cuộn mượt, không bị menu che tiêu đề */
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Menu dính */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 17, 21, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #262a33;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Hover cho thẻ bài tập */
+.exercise-card {
+  transition: transform 0.2s, border-color 0.2s;
+  animation: fadeUp 0.5s ease;
+}
+
+.exercise-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Điện thoại */
+@media (max-width: 640px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  nav h1 {
+    width: 100%;
+  }
+
+  #goals,
+  #library {
+    padding: 3rem 1rem;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+}
+
+.icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo .num {
+  display: inline-grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1.3rem;
+}
+
+/* ---------- Chữ ---------- */
+body {
+  font-family: 'Lora', Georgia, serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Anton', Impact, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #b9b1a3;
+  margin-bottom: 1.2rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  margin-right: 0.7rem;
+}
+
+.eyebrow.dark {
+  color: #5a534a;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ink);
+  border-bottom: 1px solid #2c2722;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.header-inner nav {
+  padding: 0;
+  margin-right: auto;
+  gap: 1.8rem;
+}
+
+.header-inner nav a {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+}
+
+.header-inner nav a:hover {
+  color: var(--accent);
+}
+
+.logo {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.logo .num {
+  border-radius: 4px;
+}
+
+/* ---------- Nút ---------- */
+.btn {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 0;
+  border: 2px solid var(--cream);
+  box-shadow: 4px 4px 0 var(--cream);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--cream);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  min-height: 80vh;
+  padding: 4rem max(1.5rem, calc((100% - 1100px) / 2));
+  text-align: left;
+  background: var(--ink);
+}
+
+.hero h2 {
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  line-height: 1;
+  color: var(--cream);
+}
+
+.hl {
+  color: var(--gold);
+}
+
+.hero .lead {
+  margin: 1.5rem 0 0.5rem;
+  max-width: 38ch;
+  font-size: 1.1rem;
+  color: #cfc8ba;
+}
+
+/* ---------- Ảnh polaroid ---------- */
+.polaroid {
+  position: relative;
+  justify-self: center;
+  max-width: 400px;
+  padding: 12px 12px 48px;
+  background: #fff;
+  transform: rotate(2.5deg);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+.polaroid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #2a2622;
+  filter: grayscale(1) contrast(1.25);
+}
+
+.polaroid::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 110px;
+  height: 30px;
+  background: rgba(242, 182, 50, 0.85);
+  transform: translateX(-50%) rotate(-4deg);
+}
+
+.sticker {
+  position: absolute;
+  top: -22px;
+  right: -22px;
+  width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 0.95rem;
+  line-height: 1.1;
+  transform: rotate(10deg);
+}
+
+/* ---------- Mục "The whole game" (nền giấy) ---------- */
+#goals {
+  max-width: none;
+  margin: 0;
+  padding: 5rem max(1.5rem, calc((100% - 1100px) / 2));
+  background: var(--paper);
+  color: var(--ink);
+}
+
+#goals h2 {
+  margin-bottom: 0;
+  color: var(--ink);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1;
+}
+
+.underline {
+  text-decoration: underline wavy var(--accent);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 10px;
+}
+
+.platform {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+}
+
+.platform-intro p:last-child {
+  margin-top: 1.5rem;
+  max-width: 32ch;
+  font-size: 1.1rem;
+}
+
+.platform-list {
+  list-style: none;
+  border-top: 2px solid var(--ink);
+}
+
+.platform-list a {
+  display: grid;
+  grid-template-columns: 2.5rem 10rem 1fr 1.5rem;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--ink);
+  color: inherit;
+  text-decoration: none;
+}
+
+.platform-list .n {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+}
+
+.platform-list .t {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.platform-list .d {
+  font-size: 0.98rem;
+  color: #4a4540;
+}
+
+.platform-list .arrow {
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+
+.platform-list a:hover .t {
+  color: var(--accent);
+}
+
+.platform-list a:hover .arrow {
+  transform: translate(3px, -3px);
+}
+
+/* ---------- Điện thoại ---------- */
+@media (max-width: 800px) {
+
+  .hero,
+  .platform {
+    grid-template-columns: 1fr;
+  }
+
+  .polaroid {
+    max-width: 300px;
+  }
+
+  .platform-list a {
+    grid-template-columns: 2rem 1fr 1.5rem;
+  }
+
+  .platform-list .d {
+    grid-column: 2 / 4;
+    grid-row: 2;
+  }
+
+  .platform-list .arrow {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .header-inner {
+    gap: 1rem;
+  }
+}

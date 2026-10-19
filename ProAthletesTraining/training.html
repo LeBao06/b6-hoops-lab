@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B6 Hoops Lab | Basketball Training</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Lora:wght@400;500&family=Space+Mono:wght@400;700&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#" class="logo"><span class="num">B6</span> Hoops Lab</a>
+            <nav>
+                <a href="#goals">The Game</a>
+                <a href="#library">Drills</a>
+                <a href="#plans">Sessions</a>
+            </nav>
+            <a href="#library" class="btn">Start training</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">For players · Teammates · Coaches</p>
+                <h2>Train like a <span class="hl">hooper.</span> Build every part of your game.</h2>
+                <p class="lead">Skills, strength, speed and recovery, with drills you can do alone or run with your
+                    team.</p>
+                <a href="#library" class="btn">Browse drills</a>
+            </div>
+            <figure class="polaroid">
+                <img src="images/hero.jpg" alt="Basketball hoop and net">
+                <span class="sticker">Free to use</span>
+            </figure>
+        </section>
+
+        <section id="goals">
+            <div class="platform">
+                <div class="platform-intro">
+                    <p class="eyebrow dark">One place</p>
+                    <h2>The whole <span class="underline">game.</span></h2>
+                    <p>Not just shooting drills or gym work. Every part of being a better hooper, plus sessions you can
+                        share with teammates.</p>
+                </div>
+                <ol class="platform-list">
+                    <li><a href="#library"><span class="n">01</span><span class="t">Skills</span><span
+                                class="d">Shooting, ball handling, finishing and defense, each with easier and harder
+                                versions.</span><span class="arrow">↗</span></a></li>
+                    <li><a href="#library"><span class="n">02</span><span class="t">Strength</span><span class="d">The
+                                force base behind every jump, screen and box-out.</span><span class="arrow">↗</span></a>
+                    </li>
+                    <li><a href="#library"><span class="n">03</span><span class="t">Speed &amp; Power</span><span
+                                class="d">Accelerate, change direction and jump higher.</span><span
+                                class="arrow">↗</span></a></li>
+                    <li><a href="#library"><span class="n">04</span><span class="t">Recovery</span><span
+                                class="d">Mobility and injury prevention so you keep playing.</span><span
+                                class="arrow">↗</span></a></li>
+                    <li><a href="#plans"><span class="n">05</span><span class="t">Team</span><span class="d">Build a
+                                session and share it with your teammates. Coming soon.</span><span
+                                class="arrow">↗</span></a></li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="library">
+            <h2>Exercise Library</h2>
+            <p id="progress" class="progress"></p>
+
+            <div class="filters">
+                <select id="focus-filter">
+                    <option value="all">All focus areas</option>
+                    <option value="shooting">Shooting</option>
+                    <option value="handles">Ball Handling</option>
+                    <option value="finishing">Finishing</option>
+                    <option value="defense">Defense &amp; IQ</option>
+                    <option value="strength">Strength</option>
+                    <option value="power">Power</option>
+                    <option value="speed">Speed &amp; Agility</option>
+                    <option value="conditioning">Conditioning</option>
+                    <option value="recovery">Recovery</option>
+                </select>
+
+                <select id="level-filter">
+                    <option value="all">All levels</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+
+                <select id="equipment-filter">
+                    <option value="all">Any equipment</option>
+                    <option value="none">No equipment</option>
+                    <option value="ball">Basketball only</option>
+                    <option value="gym">Gym equipment</option>
+                </select>
+            </div>
+
+            <div id="exercise-grid" class="exercise-grid"></div>
+        </section>
+        <section id="plans">
+            <h2>Training Plans</h2>
+            <p>Coming soon: 4-week programs for basketball and football.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 B6 Hoops Lab. Content is for reference only; train with a qualified coach when possible.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
